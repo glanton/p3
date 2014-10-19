@@ -11,7 +11,44 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+
+// home page: provides both forms to generate either dummy text or dummy profiles
+Route::get('/', function() {
+	
+	return View::make('_master');
+	
 });
+
+
+// send request for dummy text
+Route::get('/text/{query}', function($query) {
+	
+	return "submit text form";
+
+});
+
+
+// display dummy text and form to quickly re-process dummy text
+Route::get('/text', function() {
+	
+	return View::make('text');
+
+});
+
+
+// send request for dummy profile
+Route::get('/profile/{query}', function($query) {
+	
+	return "submit profile form";
+
+});
+
+
+
+// display dummy profile and form to quickly re-process dummy profile
+Route::get('/profile', function() {
+	
+	return View::make('profile');
+
+});
+
