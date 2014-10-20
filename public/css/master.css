@@ -1,3 +1,45 @@
 body {
-    background-color: #fafafa;
+    background-color: #666666;
+    color: #dddddd;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+}
+
+input[type="submit"] {
+    background-color: maroon;
+    color: #dddddd;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 1.5em;
+    width: 400px;
+    border-radius: 10px;
+    border: none;
+    margin: 30px auto 0 auto;
+}
+
+.formSection {
+   background-color: #444444;
+   padding: 100px 50px 40px 50px;
+}
+
+.tab {
+    width: 210px;
+    display: block;
+    float: left;
+    background-color: #222222;
+    text-align: center;
+    padding: 20px;
+}
+
+.active {
+    background-color: #444444;
+}
+
+#profileForm {
+    display: none;
+}
+
+#twoForms {
+    margin: 0 auto;
+    width: 500px;
+    background-color: #444444;
 }

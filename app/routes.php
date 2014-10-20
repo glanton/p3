@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -15,14 +16,12 @@
 // home page: provides both forms to generate either dummy text or dummy profiles
 Route::get('/', function() {
 	
-	// set default value for number of dummy paragraphs
-	$numberOfParagraphs = 4;
-	
-	// set defaults for number of dummy paragraphs and other options
-	$numberOfProfiles = 5;
-	$includeBirthday = false;
-	$includeLocation = false;
-	$includePicture = false;
+	// retrieve requested form data for dummy paragraphs and profiles and set to default values if not provided
+	$numberOfParagraphs = Input::get('numberOfParagraphs', 4);
+	$numberOfProfiles = Input::get('numberOfProfiles', 5);
+	$includeBirthday = Input::get('includeBirthday', false);
+	$includeLocation = Input::get('includeLocation', false);
+	$includePicture = Input::get('includePicture', false);
 	
 	return View::make('_master')
 		->with('numberOfParagraphs', $numberOfParagraphs)
@@ -37,16 +36,14 @@ Route::get('/', function() {
 // send and display request for dummy text
 Route::get('/text/{query}', function($query) {
 
-	// set defaults for number of dummy paragraphs and other options
-	$numberOfProfiles = 5;
-	$includeBirthday = false;
-	$includeLocation = false;
-	$includePicture = false;
-
-	// retrieve requested number of paragraphs
-	$numberOfParagraphs = Input::get('numberOfParagraphs');
+	// retrieve requested form data for dummy paragraphs and profiles and set to default values if not provided
+	$numberOfParagraphs = Input::get('numberOfParagraphs', 4);
+	$numberOfProfiles = Input::get('numberOfProfiles', 5);
+	$includeBirthday = Input::get('includeBirthday', false);
+	$includeLocation = Input::get('includeLocation', false);
+	$includePicture = Input::get('includePicture', false);
 	
-	// strip to integer and pull back to 1 or 7 if outside of range
+	// strip numberOfParagraphs to integer and pull back to 1 or 7 if outside of range
 	$numberOfParagraphs = intval($numberOfParagraphs);
 	if ($numberOfParagraphs < 1) {
 		$numberOfParagraphs = 1;
@@ -67,14 +64,20 @@ Route::get('/text/{query}', function($query) {
 // send and display request for dummy profile
 Route::get('/profile/{query}', function($query) {
 	
-	// set default value for number of dummy paragraphs
-	$numberOfParagraphs = 4;
+	// retrieve requested form data for dummy paragraphs and profiles and set to default values if not provided
+	$numberOfParagraphs = Input::get('numberOfParagraphs', 4);
+	$numberOfProfiles = Input::get('numberOfProfiles', 5);
+	$includeBirthday = Input::get('includeBirthday', false);
+	$includeLocation = Input::get('includeLocation', false);
+	$includePicture = Input::get('includePicture', false);
 	
-	// retrieve requested number of profiles and birthday, location, and picture options
-	$numberOfProfiles = Input::get('numberOfProfiles');
-	$includeBirthday = Input::get('includeBirthday');
-	$includeLocation = Input::get('includeLocation');
-	$includePicture = Input::get('includePicture');
+	// strip numberOfProiles to integer and pull back to 1 or 30 if outside of range
+	$numberOfProfiles = intval($numberOfProfiles);
+	if ($numberOfProfiles < 1) {
+		$numberOfProfiles = 1;
+	} elseif ($numberOfProfiles > 30) {
+		$numberOfProfiles = 30;
+	}
 	
 	return View::make('profile')
 		->with('numberOfParagraphs', $numberOfParagraphs)

@@ -7,11 +7,13 @@
 
 
 @section('content')
-    ...profile response operational
+    ...profile response data: 
     {{{ $numberOfProfiles }}}
     {{{ $includeBirthday }}}
     {{{ $includeLocation }}}
     {{{ $includePicture }}}
+    <br><br>
+    <p>dummy profile data displayed here</p>
 @stop
 
 

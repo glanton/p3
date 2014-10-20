@@ -7,8 +7,10 @@
 
 
 @section('content')
-    ...text response operational
+    ...text response data: 
     {{{ $numberOfParagraphs }}}
+    <br><br>
+    <p>dummy paragraphs displayed here</p>
 @stop
 
 
