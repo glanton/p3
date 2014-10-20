@@ -15,40 +15,73 @@
 // home page: provides both forms to generate either dummy text or dummy profiles
 Route::get('/', function() {
 	
-	return View::make('_master');
+	// set default value for number of dummy paragraphs
+	$numberOfParagraphs = 4;
+	
+	// set defaults for number of dummy paragraphs and other options
+	$numberOfProfiles = 5;
+	$includeBirthday = false;
+	$includeLocation = false;
+	$includePicture = false;
+	
+	return View::make('_master')
+		->with('numberOfParagraphs', $numberOfParagraphs)
+		->with('numberOfProfiles', $numberOfProfiles)
+		->with('includeBirthday', $includeBirthday)
+		->with('includeLocation', $includeLocation)
+		->with('includePicture', $includePicture);
 	
 });
 
 
-// send request for dummy text
+// send and display request for dummy text
 Route::get('/text/{query}', function($query) {
+
+	// set defaults for number of dummy paragraphs and other options
+	$numberOfProfiles = 5;
+	$includeBirthday = false;
+	$includeLocation = false;
+	$includePicture = false;
+
+	// retrieve requested number of paragraphs
+	$numberOfParagraphs = Input::get('numberOfParagraphs');
 	
-	return "submit text form";
+	// strip to integer and pull back to 1 or 7 if outside of range
+	$numberOfParagraphs = intval($numberOfParagraphs);
+	if ($numberOfParagraphs < 1) {
+		$numberOfParagraphs = 1;
+	} elseif ($numberOfParagraphs > 7) {
+		$numberOfParagraphs = 7;
+	}
+
+	return View::make('text')
+		->with('numberOfParagraphs', $numberOfParagraphs)
+		->with('numberOfProfiles', $numberOfProfiles)
+		->with('includeBirthday', $includeBirthday)
+		->with('includeLocation', $includeLocation)
+		->with('includePicture', $includePicture);
 
 });
 
 
-// display dummy text and form to quickly re-process dummy text
-Route::get('/text', function() {
-	
-	return View::make('text');
-
-});
-
-
-// send request for dummy profile
+// send and display request for dummy profile
 Route::get('/profile/{query}', function($query) {
 	
-	return "submit profile form";
-
-});
-
-
-
-// display dummy profile and form to quickly re-process dummy profile
-Route::get('/profile', function() {
+	// set default value for number of dummy paragraphs
+	$numberOfParagraphs = 4;
 	
-	return View::make('profile');
+	// retrieve requested number of profiles and birthday, location, and picture options
+	$numberOfProfiles = Input::get('numberOfProfiles');
+	$includeBirthday = Input::get('includeBirthday');
+	$includeLocation = Input::get('includeLocation');
+	$includePicture = Input::get('includePicture');
+	
+	return View::make('profile')
+		->with('numberOfParagraphs', $numberOfParagraphs)
+		->with('numberOfProfiles', $numberOfProfiles)
+		->with('includeBirthday', $includeBirthday)
+		->with('includeLocation', $includeLocation)
+		->with('includePicture', $includePicture);
 
 });
 

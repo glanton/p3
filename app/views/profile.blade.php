@@ -8,6 +8,10 @@
 
 @section('content')
     ...profile response operational
+    {{{ $numberOfProfiles }}}
+    {{{ $includeBirthday }}}
+    {{{ $includeLocation }}}
+    {{{ $includePicture }}}
 @stop
 
 

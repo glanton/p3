@@ -8,6 +8,7 @@
 
 @section('content')
     ...text response operational
+    {{{ $numberOfParagraphs }}}
 @stop
 
 
