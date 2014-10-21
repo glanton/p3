@@ -5,6 +5,11 @@ body {
     font-size: 1.5em;
 }
 
+h1 {
+    margin: 0;
+    font-size: 4em;
+}
+
 input[type="submit"] {
     background-color: maroon;
     color: #dddddd;
@@ -19,6 +24,24 @@ input[type="submit"] {
 .formSection {
    background-color: #444444;
    padding: 100px 50px 40px 50px;
+}
+
+.litFont {
+    font-family: Georgia, Times, serif;
+}
+
+.subH1 {
+    position: relative;
+    top: -33px;
+    left: 3px;
+    font-family: Monaco, monospace;
+    font-size: 0.69em;
+}
+
+.sumFont {
+    font-family: "Courier New", monospace;
+    font-weight: normal;
+    font-size: 1.2em;
 }
 
 .tab {

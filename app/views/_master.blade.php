@@ -2,7 +2,7 @@
 <html>
 <head>
 
-    <title>Developer's Best Friend</title>
+    <title>Litsum | Pro Profile</title>
 
     <meta charset='utf-8'>
     <link rel='stylesheet' href='{{ asset('css/master.css') }}'>
@@ -11,9 +11,8 @@
 
 </head>
 <body>
-    <h1>Developer's Best Friend</h1>
-        
-    <p>Text explaining p3 and what it does.</p>
+    <h1><span class="litFont">Lit</span><span class="sumFont">sum</span></h1>
+    <div class="subH1">Test your website. Write a classic.</div>
 
     <div id="twoForms">
     
