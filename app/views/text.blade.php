@@ -7,10 +7,16 @@
 
 
 @section('content')
-    ...text response data: 
-    {{{ $numberOfParagraphs }}}
+    
     <br><br>
-    <p>dummy paragraphs displayed here</p>
+    
+    @foreach ($generatedParagraphs as $paragraph)
+        @foreach ($paragraph as $sentence)
+            {{ $sentence }}
+        @endforeach
+        <br><br>
+    @endforeach
+    
 @stop
 
 

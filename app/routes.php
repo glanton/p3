@@ -50,13 +50,45 @@ Route::get('/text/{query}', function($query) {
 	} elseif ($numberOfParagraphs > 7) {
 		$numberOfParagraphs = 7;
 	}
-
+	
+	$booksToRead = array("AnneOfGreenGables",
+				"Dracula",
+				"Frankenstein",
+				"GreatExpectations",
+				"HeartOfDarkness",
+				"JaneEyre",
+				"MobyDick",
+				"PortraitOfTheArtist",
+				"PrideAndPrejudice",
+				"TheScarletLetter");
+            
+        $openedBooks = array();
+            
+	$numberOfBooksToRead = count($booksToRead);
+	for ($i = 0; $i < $numberOfBooksToRead; $i++) {
+	    $bookString = file_get_contents(asset('books/' . $booksToRead[$i] . '.txt'));
+	    array_push($openedBooks, preg_split('/(?<!Mr\.)(?<!Mrs\.)(?<!Ms\.)(?<!Dr\.)(?<!St\.)(?<=[.?!])\s+(?=[a-z])/i', $bookString));
+	}
+	
+	$paragraphLength = rand(4, 7);
+	$generatedParagraphs = array();
+	
+	for ($k = 0; $k < $numberOfParagraphs; $k++) {
+	    for ($i = 0; $i < $paragraphLength; $i++) {
+		$randomBook = rand(0, $numberOfBooksToRead - 1);
+		$randomSentence = rand(0, count($openedBooks[$randomBook]));
+		$generatedParagraphs[$k][$i] = $openedBooks[$randomBook][$randomSentence];
+	    }
+	}
+	
+	
 	return View::make('text')
 		->with('numberOfParagraphs', $numberOfParagraphs)
 		->with('numberOfProfiles', $numberOfProfiles)
 		->with('includeBirthday', $includeBirthday)
 		->with('includeLocation', $includeLocation)
-		->with('includePicture', $includePicture);
+		->with('includePicture', $includePicture)
+		->with('generatedParagraphs', $generatedParagraphs);
 
 });
 
