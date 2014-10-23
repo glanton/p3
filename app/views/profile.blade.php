@@ -7,18 +7,12 @@
 
 
 @section('content')
-    ...profile response data: 
-    {{{ $numberOfProfiles }}}
-    {{{ $includeBirthday }}}
-    {{{ $includeLocation }}}
-    {{{ $includePicture }}}
-    <br><br>
-    <p>dummy profile data displayed here</p>
         
     @foreach ($generatedProfiles as $profile)
-        <img src='data:image/png;base64,{{$profile}}'>
+        <img src='data:image/png;base64,{{$profile}}' alt='generated profile picture'>
         <br><br>
     @endforeach
+    
 @stop
 
 
