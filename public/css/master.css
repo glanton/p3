@@ -35,7 +35,7 @@ input[type="submit"] {
 .left {
     float: left;
     width: 50%;
-    min-width: 360px;
+    min-width: 380px;
     height: 550px;
     background-color: #dddddd;
 }
@@ -43,7 +43,7 @@ input[type="submit"] {
 .right {
     float: left;
     width: 50%;
-    min-width: 360px;
+    min-width: 380px;
     height: 550px;
     background-color: #aaaaaa;
     color: #999999;
@@ -131,6 +131,10 @@ input[type="submit"] {
     padding: 20px;
 }
 
+.title {
+    width: 100%;
+}
+
 #footer {
     position: relative;
     margin-top: -100px;
@@ -151,7 +155,7 @@ input[type="submit"] {
 #main {
     overflow: auto;
     padding-bottom: 100px;
-    min-width: 720px;
+    min-width: 760px;
 }
 
 #profileForm {

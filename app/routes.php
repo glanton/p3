@@ -111,12 +111,55 @@ Route::get('/profile/{query}', function($query) {
 		$numberOfProfiles = 30;
 	}
 	
+	$faces = array(': )', ':-)', ': ]', ':-]', ': }', ':-}',
+               ': )', ':-(', ': [', ':-[', ': {', ':-{', ':, (',
+               '; )', ';-)', '; ]', ';-]', '; }', ';-}',
+               ': |', ':-|', ': /', ':-/', ': \\', ':-\\');
+	$facesLength = count($faces) - 1;
+	
+	$generatedProfiles = array();
+	
+	// need to credit this in readme.md
+	for ($i = 0; $i < $numberOfProfiles; $i++) {
+	    $profilePic = imagecreate(200, 200);
+	    $background = imagecolorallocate($profilePic, 0, 0, 0);
+	    $text_color = imagecolorallocate($profilePic, 255, 255, 255);
+	    $sq_color1 = imagecolorallocate($profilePic, rand(0,255), rand(0,255), rand(0,255));
+	    $sq_color2 = imagecolorallocate($profilePic, rand(0,255), rand(0,255), rand(0,255));
+	    $sq_color3 = imagecolorallocate($profilePic, rand(0,255), rand(0,255), rand(0,255));
+	    $sq_color4 = imagecolorallocate($profilePic, rand(0,255), rand(0,255), rand(0,255));
+	    imagefilledrectangle($profilePic, 0, 0, 100, 100, $sq_color1);
+	    imagefilledrectangle($profilePic, 101, 101, 200, 200, $sq_color2);
+	    imagefilledrectangle($profilePic, 101, 0, 200, 100, $sq_color3);
+	    imagefilledrectangle($profilePic, 0, 101, 100, 200, $sq_color4);
+	    imagettftext($profilePic, 130, -90, 55, 35, $text_color, public_path() . '/fonts/exprswy_free.ttf', $faces[rand(0, $facesLength)] );
+	    
+	    ob_start();
+	    imagepng($profilePic);
+	    $profilePicData = ob_get_contents();
+	    ob_end_clean();
+	    $profilePicDataBase64 = base64_encode ($profilePicData);
+	    $generatedProfiles[$i] = $profilePicDataBase64;
+	    
+	    imagecolordeallocate($profilePic, $sq_color4);
+	    imagecolordeallocate($profilePic, $sq_color3);
+	    imagecolordeallocate($profilePic, $sq_color2);
+	    imagecolordeallocate($profilePic, $sq_color1);
+	    imagecolordeallocate($profilePic, $text_color);
+	    imagecolordeallocate($profilePic, $background);
+	    imagedestroy($profilePic);
+	}
+	
+	
+	
+	
 	return View::make('profile')
 		->with('numberOfParagraphs', $numberOfParagraphs)
 		->with('numberOfProfiles', $numberOfProfiles)
 		->with('includeBirthday', $includeBirthday)
 		->with('includeLocation', $includeLocation)
-		->with('includePicture', $includePicture);
+		->with('includePicture', $includePicture)
+		->with('generatedProfiles', $generatedProfiles);
 
 });
 

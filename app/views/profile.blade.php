@@ -14,6 +14,11 @@
     {{{ $includePicture }}}
     <br><br>
     <p>dummy profile data displayed here</p>
+        
+    @foreach ($generatedProfiles as $profile)
+        <img src='data:image/png;base64,{{$profile}}'>
+        <br><br>
+    @endforeach
 @stop
 
 

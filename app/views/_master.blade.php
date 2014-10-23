@@ -17,18 +17,18 @@
         
         
     <div class="left">
-    
-        <h1><span class="litFont">Lit</span><span class="sumFont">sum</span></h1>
+        <div class="title">
+            <h1><span class="litFont">Lit</span><span class="sumFont">sum</span></h1>
+        </div> 
         <div class="litSumSub">Test your website. Write a classic.</div>
-            
     </div>
        
         
     <div class="right">
-    
-        <h1 class="alignRight"><span class="proFont">proProfile</span></h1>
+        <div class="title alignRight">
+            <h1 class="alignRight"><span class="proFont">proProfile</span></h1>
+        </div> 
         <div class="proProfileSub alignRight">Save time and make people.</div>
-            
     </div>
     
     
@@ -56,7 +56,7 @@
         
         
         <!-- form for selecting dummy profile options -->
-        {{ Form::open(array('class' => 'formSection', 'id' => 'profileForm', 'url' => 'profile/fom', 'method' => 'GET')) }}
+        {{ Form::open(array('class' => 'formSection', 'id' => 'profileForm', 'url' => 'profile/form', 'method' => 'GET')) }}
             {{ Form::label('numberOfProfiles', 'How many profiles?') }}
             <br>
             {{ Form::input('number', 'numberOfProfiles', $numberOfProfiles, ['max' => 30]) }}
@@ -91,6 +91,7 @@
     </div>
     
     
+    <!-- Sticky Footer... be sure to credit in readme.md -->
     <div id="footer">
         <div id="footerText">
             Alex Friberg | <a href="http://p1.alexf.me/">dwa15 portfolio</a>
