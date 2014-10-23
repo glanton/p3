@@ -97,35 +97,10 @@
         </div>
     </div>
 
-        
-
     
-
-    
+    <!-- scripts: jQuery from Google and local script for switching forms -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'></script>
-        
-    <script type='text/javascript'>
-        // ############### make it's own file ##############
-        jQuery("#textFormTab").click(function(){
-            jQuery("#profileForm").hide();
-            jQuery("#textForm").show();
-            
-            jQuery("#profileFormTab").css("background-color", "#555555");
-            jQuery("#textFormTab").css("background-color", "#888888");
-            jQuery(".right").css("background-color", "#aaaaaa").css("color", "#999999");
-            jQuery(".left").css("background-color", "#dddddd").css("color", "#222222");
-        });
-        
-         jQuery("#profileFormTab").click(function(){
-            jQuery("#textForm").hide();
-            jQuery("#profileForm").show();
-            
-            jQuery("#textFormTab").css("background-color", "#555555");
-            jQuery("#profileFormTab").css("background-color", "#888888");
-            jQuery(".left").css("background-color", "#aaaaaa").css("color", "#999999");
-            jQuery(".right").css("background-color", "#dddddd").css("color", "#222222");
-         });
-    </script>
+    <script src='{{ asset('scripts/master.js') }}' type='text/javascript'></script>
 
     @yield('footer')
 
