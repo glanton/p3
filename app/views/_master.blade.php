@@ -11,12 +11,30 @@
 
 </head>
 <body>
-    <h1><span class="litFont">Lit</span><span class="sumFont">sum</span></h1>
-    <div class="subH1">Test your website. Write a classic.</div>
-
-    <div id="twoForms">
     
-        <div class="tab active" id="textFormTab">Paragraphs</div>
+    <div id="wrap">
+    <div id="main">
+        
+        
+    <div class="left">
+    
+        <h1><span class="litFont">Lit</span><span class="sumFont">sum</span></h1>
+        <div class="litSumSub">Test your website. Write a classic.</div>
+            
+    </div>
+       
+        
+    <div class="right">
+    
+        <h1 class="alignRight"><span class="proFont">proProfile</span></h1>
+        <div class="proProfileSub alignRight">Save time and make people.</div>
+            
+    </div>
+    
+    
+    <div class="selection">
+    
+        <div class="tab" id="textFormTab">Paragraphs</div>
         <div class="tab" id="profileFormTab">Profiles</div>
     
         <!-- form for selecting number of dummy paragraphs -->  
@@ -54,10 +72,35 @@
             <br>
             {{ Form::submit('Submit') }}
         {{ Form::close() }}
+            
+    </div>
     
+    
+    <div class="content">
+    
+        <div class='generatedContentSection'>
+            <div class='generatedContent'>
+                @yield('content')
+            </div>  
+        </div>
+        
+    </div>
+      
+      
+    </div>  
+    </div>
+    
+    
+    <div id="footer">
+        <div id="footerText">
+            Alex Friberg | <a href="http://p1.alexf.me/">dwa15 portfolio</a>
+        </div>
     </div>
 
-    @yield('content')
+        
+
+    
+
     
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' type='text/javascript'></script>
         
@@ -67,16 +110,20 @@
             jQuery("#profileForm").hide();
             jQuery("#textForm").show();
             
-            jQuery("#profileFormTab").css("background-color", "#222222");
-            jQuery("#textFormTab").css("background-color", "#444444");
+            jQuery("#profileFormTab").css("background-color", "#555555");
+            jQuery("#textFormTab").css("background-color", "#888888");
+            jQuery(".right").css("background-color", "#aaaaaa").css("color", "#999999");
+            jQuery(".left").css("background-color", "#dddddd").css("color", "#222222");
         });
         
          jQuery("#profileFormTab").click(function(){
             jQuery("#textForm").hide();
             jQuery("#profileForm").show();
             
-            jQuery("#textFormTab").css("background-color", "#222222");
-            jQuery("#profileFormTab").css("background-color", "#444444");
+            jQuery("#textFormTab").css("background-color", "#555555");
+            jQuery("#profileFormTab").css("background-color", "#888888");
+            jQuery(".left").css("background-color", "#aaaaaa").css("color", "#999999");
+            jQuery(".right").css("background-color", "#dddddd").css("color", "#222222");
          });
     </script>
 

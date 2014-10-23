@@ -1,0 +1,35 @@
+.left {
+    float: left;
+    width: 50%;
+    min-width: 360px;
+    height: 550px;
+    background-color: #aaaaaa;
+    color: #999999;
+}
+
+.right {
+    float: left;
+    width: 50%;
+    min-width: 360px;
+    height: 550px;
+    background-color: #dddddd;
+    color: #222222;
+}
+
+
+#profileForm {
+    display: block;
+}
+
+#profileFormTab {
+    background-color: #888888;
+}
+
+
+#textForm {
+    display: none;
+}
+
+#textFormTab {
+    background-color: #555555;
+}

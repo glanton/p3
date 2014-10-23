@@ -2,7 +2,7 @@
 
 
 @section('head')
-    
+    <link rel='stylesheet' href='{{ asset('css/profile_output.css') }}'>
 @stop
 
 

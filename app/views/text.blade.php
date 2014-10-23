@@ -8,13 +8,12 @@
 
 @section('content')
     
-    <br><br>
-    
     @foreach ($generatedParagraphs as $paragraph)
+        <p>
         @foreach ($paragraph as $sentence)
             {{ $sentence }}
         @endforeach
-        <br><br>
+        </p>
     @endforeach
     
 @stop

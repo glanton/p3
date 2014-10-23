@@ -1,12 +1,23 @@
+a {
+    text-decoration: none;
+    color: #bbbbbb;
+}
+
+html, body {
+    height: 100%;
+}
+
 body {
-    background-color: #666666;
-    color: #dddddd;
+    background-color: #dddddd;
+    color: #222222;
     font-family: Helvetica, Arial, sans-serif;
     font-size: 1.5em;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-    margin: 0;
+    margin: 0 5px;
     font-size: 4em;
 }
 
@@ -21,8 +32,63 @@ input[type="submit"] {
     margin: 30px auto 0 auto;
 }
 
+.left {
+    float: left;
+    width: 50%;
+    min-width: 360px;
+    height: 550px;
+    background-color: #dddddd;
+}
+
+.right {
+    float: left;
+    width: 50%;
+    min-width: 360px;
+    height: 550px;
+    background-color: #aaaaaa;
+    color: #999999;
+}
+
+.selection {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+}
+
+.content {
+    width: 100%;
+    background-color: #dddddd;
+    float: left;
+}
+
+.alignRight {
+    float: right;
+}
+
+.generatedContentSection {
+    background-color: #eeeeee;
+    color: #222222;
+    font-size: 0.8em;
+    width: 80%;
+    margin: 20px auto;
+    padding: 40px;
+}
+
+.generatedContent {
+    width: 100%;
+    position: relative;
+}
+
 .formSection {
-   background-color: #444444;
+   background-color: #888888;
    padding: 100px 50px 40px 50px;
 }
 
@@ -30,12 +96,25 @@ input[type="submit"] {
     font-family: Georgia, Times, serif;
 }
 
-.subH1 {
+.litSumSub {
     position: relative;
     top: -33px;
     left: 3px;
     font-family: Monaco, monospace;
     font-size: 0.69em;
+    margin: 0 5px;
+}
+
+.proFont {
+    font-family: Charcoal, sans-serif;
+    font-size: 0.8em;
+}
+
+.proProfileSub {
+    position: relative;
+    font-family: Georgia, serif;
+    top: -20px;
+    margin: 0 5px;
 }
 
 .sumFont {
@@ -48,21 +127,53 @@ input[type="submit"] {
     width: 210px;
     display: block;
     float: left;
-    background-color: #222222;
     text-align: center;
     padding: 20px;
 }
 
-.active {
-    background-color: #444444;
+#footer {
+    position: relative;
+    margin-top: -100px;
+    height: 100px;
+    clear: both;
+    background-color: maroon;
+    color: #888888;
+}
+
+#footerText {
+    float: right;
+    position: relative;
+    top: 60px;
+    padding: 0 20px;
+    font-size: 0.8em;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 100px;
+    min-width: 720px;
 }
 
 #profileForm {
     display: none;
 }
 
-#twoForms {
-    margin: 0 auto;
-    width: 500px;
-    background-color: #444444;
+#profileFormTab {
+    background-color: #555555;
+}
+
+#profileFormTab:hover {
+    color: #dddddd;
+}
+
+#textFormTab {
+    background-color: #888888;
+}
+
+#textFormTab:hover {
+    color: #dddddd;
+}
+
+#wrap {
+    min-height: 100%;
 }
