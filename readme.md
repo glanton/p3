@@ -20,6 +20,8 @@ I will demo in-person next Thursday.
 
 ### Additional Info
 
+Post-deadline submission note: See the commit for details but I just fixed some typos and added some comments to the code while it's still fresh. All functionality was up and running when I submitted the link.
+
 There's a lot of credit to go around here, and I know I'll never be able to do justice to all of the help and techniques I found on StackOverflow. Some main sources, though:
 
 - Project Gutenberg, where I found complete text files for the ten books I used
