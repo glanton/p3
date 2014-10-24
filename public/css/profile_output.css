@@ -2,7 +2,7 @@
     float: left;
     width: 50%;
     min-width: 360px;
-    height: 550px;
+    height: 622px;
     background-color: #aaaaaa;
     color: #999999;
 }
@@ -11,7 +11,7 @@
     float: left;
     width: 50%;
     min-width: 360px;
-    height: 550px;
+    height: 622px;
     background-color: #dddddd;
     color: #222222;
 }
@@ -22,7 +22,7 @@
 }
 
 #profileFormTab {
-    background-color: #888888;
+    background-color: brown;
 }
 
 
@@ -31,5 +31,5 @@
 }
 
 #textFormTab {
-    background-color: #555555;
+    background-color: maroon;
 }

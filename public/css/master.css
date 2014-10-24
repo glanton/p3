@@ -23,7 +23,7 @@ h1 {
 
 input[type="checkbox"] {
     transform: scale(1.5);
-    margin: 0 36px 0 20px;
+    margin: 0 15px 0 5px;
     position: relative;
     top: -5px;
 }
@@ -33,7 +33,7 @@ input[type="number"] {
     width: 40px;
     padding: 2px;
     text-align: center;
-    margin: 0 20px 0 0;
+    margin: 0 15px 0 0;
     position: relative;
     top: -5px;
 }
@@ -57,7 +57,7 @@ label {
     float: left;
     width: 50%;
     min-width: 380px;
-    height: 600px;
+    height: 550px;
     background-color: #dddddd;
 }
 
@@ -65,7 +65,7 @@ label {
     float: left;
     width: 50%;
     min-width: 380px;
-    height: 600px;
+    height: 550px;
     background-color: #aaaaaa;
     color: #999999;
 }
@@ -74,20 +74,28 @@ label {
     position: absolute;
     left: 0;
     right: 0;
-    top: 150px;
     margin-left: auto;
     margin-right: auto;
+    top: 250px;
     width: 500px;
-    
-    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
-    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
     box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+    color: #eeeeee;
+}
+
+.checkCol {
+    width: 210px;
+    float: left;
 }
 
 .content {
     width: 100%;
     background-color: #dddddd;
     float: left;
+}
+
+.description {
+    font-size: 0.72em;
+    margin: 0 20px;
 }
 
 .alignRight {
@@ -109,8 +117,8 @@ label {
 }
 
 .formSection {
-   background-color: #888888;
-   padding: 100px 50px 40px 50px;
+   background-color: brown;
+   padding: 100px 40px 40px 40px;
 }
 
 .litFont {
@@ -156,12 +164,17 @@ label {
     width: 100%;
 }
 
+.titleBlock {
+    display: block;
+    height: 150px;
+}
+
 #footer {
     position: relative;
     margin-top: -100px;
     height: 100px;
     clear: both;
-    background-color: maroon;
+    background-color: brown;
     color: #888888;
 }
 
@@ -184,19 +197,19 @@ label {
 }
 
 #profileFormTab {
-    background-color: #555555;
+    background-color: maroon;
 }
 
 #profileFormTab:hover {
-    color: #dddddd;
+    text-shadow: 0 0 5px white;
 }
 
 #textFormTab {
-    background-color: #888888;
+    background-color: brown;
 }
 
 #textFormTab:hover {
-    color: #dddddd;
+    text-shadow: 0 0 5px white;
 }
 
 #wrap {

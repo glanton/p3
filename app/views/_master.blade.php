@@ -17,18 +17,30 @@
         
         
     <div class="left">
-        <div class="title">
-            <h1><span class="litFont">Lit</span><span class="sumFont">sum</span></h1>
-        </div> 
-        <div class="litSumSub">Test your website. Write a classic.</div>
+        <div class="titleBlock">
+            <div class="title">
+                <h1><span class="litFont">Lit</span><span class="sumFont">sum</span></h1>
+            </div> 
+            <div class="litSumSub">Test your website. Write a classic.</div>
+        </div>
+        
+        <div class="description">
+            Mine the masterpieces of the English language for your web development needs. Specify how many dummy paragraphs you require, and let Litsum forge a new classic. 
+        </div>
     </div>
        
         
     <div class="right">
-        <div class="title alignRight">
-            <h1 class="alignRight"><span class="proFont">proProfile</span></h1>
-        </div> 
-        <div class="proProfileSub alignRight">Save time and make people.</div>
+        <div class="titleBlock">
+            <div class="title alignRight">
+                <h1 class="alignRight"><span class="proFont">proProfile</span></h1>
+            </div> 
+            <div class="proProfileSub alignRight">Save time and make people.</div>
+        </div>
+        
+        <div class="description">
+            Why corral data from real people to test profiles when you can generate people on the fly? Tell proProfile  what you need and let a crowd populate in seconds.
+        </div>            
     </div>
     
     
@@ -51,17 +63,20 @@
             {{ Form::input('number', 'numberOfProfiles', $numberOfProfiles, ['max' => 50]) }}
             {{ Form::label('numberOfProfiles', 'Number of Profiles') }}
             <br>
-            {{ Form::checkbox('includeBirthday', 'true', $includeBirthday) }}
-            {{ Form::label('includeBirthday', 'Birthdate') }}
-            <br>
-            {{ Form::checkbox('includeLocation', 'true', $includeLocation) }}
-            {{ Form::label('includeLocation', 'City/Country') }}
-            <br>
-            {{ Form::checkbox('includePicture', 'true', $includePicture) }}
-            {{ Form::label('includePicture', 'Profile Picture') }}
-            <br>
-            {{ Form::checkbox('includeFavoriteQuote', 'true', $includeFavoriteQuote) }}
-            {{ Form::label('includeFavoriteQuote', 'Favorite Quote') }}
+            <div class="checkCol">
+                {{ Form::checkbox('includeBirthday', 'true', $includeBirthday, array('id' => 'includeBirthday')) }}
+                {{ Form::label('includeBirthday', 'Birthdate') }}
+                <br>
+                {{ Form::checkbox('includePicture', 'true', $includePicture, array('id' => 'includePicture')) }}
+                {{ Form::label('includePicture', 'Profile Picture') }}
+            </div>
+            <div class="checkCol">
+                {{ Form::checkbox('includeLocation', 'true', $includeLocation, array('id' => 'includeLocation')) }}
+                {{ Form::label('includeLocation', 'City/Country') }}
+                <br>
+                {{ Form::checkbox('includeFavoriteQuote', 'true', $includeFavoriteQuote, array('id' => 'includeFavoriteQuote')) }}
+                {{ Form::label('includeFavoriteQuote', 'Favorite Quote') }}
+            </div>
             <br>
             {{ Form::submit('Submit') }}
         {{ Form::close() }}
