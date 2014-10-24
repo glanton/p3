@@ -47,6 +47,7 @@ input[type="submit"] {
     border-radius: 10px;
     border: none;
     margin: 30px auto 0 auto;
+    padding: 5px;
 }
 
 label {
