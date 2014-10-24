@@ -78,7 +78,7 @@ label {
     margin-right: auto;
     top: 250px;
     width: 500px;
-    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.35);
+    box-shadow: 0 0 15px 4px rgba(0,0,0,0.35);
     color: #eeeeee;
 }
 
