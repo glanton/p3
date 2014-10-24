@@ -125,7 +125,6 @@ Route::get('/profile/{query}', function($query) {
 	
 	$generatedPictures = array();
 	if ($includePicture == true) {
-		// need to credit this in readme.md
 		for ($i = 0; $i < $numberOfProfiles; $i++) {
 		    $profilePic = imagecreate(200, 200);
 		    $background = imagecolorallocate($profilePic, 0, 0, 0);

@@ -99,7 +99,6 @@
     </div>
     
     
-    <!-- Sticky Footer... be sure to credit in readme.md -->
     <div id="footer">
         <div id="footerText">
             Alex Friberg | <a href="http://p1.alexf.me/">dwa15 portfolio</a>

@@ -1,25 +1,39 @@
-## Laravel PHP Framework
+# p3
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/downloads.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+Project Three of dwa15
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+### URL
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+[p3.alexf.me](http://p3.alexf.me/)
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+### Project Desc
 
-## Official Documentation
+This is Project 3 (p3), also known as *Developer's Best Friend*. In my case we'll be calling it Litsum/proProfile, a one-two development punch.
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+I chose ten well-known classics (which I've read, of course!) from available public domain books, and randomly mash their sentences together to create dummy paragraphs (what I'm calling Litsum).
 
-### Contributing To Laravel
+For the test profiles (the proProfile tool) I generate random images in php encoded as base64, and also have other normal options (birthdate, location). Using some Litsum code I provide the option to include a "favorite quote".
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+###Demo Info
 
-### License
+I will demo in-person.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+### Additional Info
+
+There's a lot of credit to go around here, and I know I'll never be able to do justice to all of the help and techniques I found on StackOverflow. Some main sources, though:
+
+- Project Gutenberg, where I found complete text files for the ten books I used
+- thesitewizard, where I learned about generating images in php: http://www.thesitewizard.com/php/create-image.shtml
+- Ray Larabie, from Typodermic Fonts, who created and distributed for free the TTF file for Expressway, which turned out to be the perfect font for created the smileys on my generated profile pictures
+- CSS Sticky Footer, which didn't really make a different on my latop but should look nice on larger screens
+- Wikipedia, where I found a nice city and country list
+- mongabay.com, which has a great list of the 1,000 most common last names in the United States
+- hadley/data-baby-names on Github, which gave me a huge and awesome list of first names
+
+I'm happy with most of how the project came out, but the code is a lot less DRY than I would like. I think a lot of this could be fixed with a few good classes but I was already too far into the project when we started doing classes to want to switch. As it is routes.php is a little bit of a mess. The other major (and more noticeably) change I'd like to make is to make the book mash-up more efficient. Right now it loads the full content of all ten books to only pull out at most a few hundred sentences.
+
+I'd like to split the books into fairly uniform chunks, and add that as the top layer in randomly picking a sentence:
+
+pick book chunks -> pick sentences randomly from among those chunks
+
+I'd guess it would be possible to cut down more than 90% of the processing this way and still have a just-as-random mash-up. A more scalable solution would be to write a php script that checks the book folder for new books and then auto-indexes new ones for future use, but now I'm really getting ahead of myself!
