@@ -51,7 +51,7 @@
     
         <!-- form for selecting number of dummy paragraphs -->  
         {{ Form::open(array('class' => 'formSection', 'id' => 'textForm', 'url' => 'text/form', 'method' => 'GET')) }}
-            {{ Form::input('number', 'numberOfParagraphs', $numberOfParagraphs, ['max' => 50]) }}
+            {{ Form::input('number', 'numberOfParagraphs', $numberOfParagraphs, array('id' => 'numberOfParagraphs', 'max' => '50')) }}
             {{ Form::label('numberOfParagraphs', 'Number of Paragraphs') }}
             <br>
             {{ Form::submit('Submit') }}
@@ -60,7 +60,7 @@
         
         <!-- form for selecting dummy profile options -->
         {{ Form::open(array('class' => 'formSection', 'id' => 'profileForm', 'url' => 'profile/form', 'method' => 'GET')) }}
-            {{ Form::input('number', 'numberOfProfiles', $numberOfProfiles, ['max' => 50]) }}
+            {{ Form::input('number', 'numberOfProfiles', $numberOfProfiles, array('id' => 'numberOfProfiles', 'max' => '50')) }}
             {{ Form::label('numberOfProfiles', 'Number of Profiles') }}
             <br>
             <div class="checkCol">

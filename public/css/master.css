@@ -134,6 +134,15 @@ label {
     margin: 0 10px;
 }
 
+.name {
+    font-weight: bold;
+}
+
+.picture {
+    float: left;
+    margin: 0 50px 30px 0;
+}
+
 .proFont {
     font-family: Charcoal, sans-serif;
     font-size: 0.8em;
@@ -144,6 +153,19 @@ label {
     font-family: Georgia, serif;
     top: -20px;
     margin: 0 10px;
+}
+
+.profileSection {
+    min-height: 200px;
+}
+
+.profileTextSection {
+    
+}
+
+.quote {
+    margin: 10px 0;
+    display: block;
 }
 
 .sumFont {
