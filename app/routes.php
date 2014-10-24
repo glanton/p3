@@ -17,18 +17,20 @@
 Route::get('/', function() {
 	
 	// retrieve requested form data for dummy paragraphs and profiles and set to default values if not provided
-	$numberOfParagraphs = Input::get('numberOfParagraphs', 4);
+	$numberOfParagraphs = Input::get('numberOfParagraphs', 5);
 	$numberOfProfiles = Input::get('numberOfProfiles', 5);
 	$includeBirthday = Input::get('includeBirthday', false);
 	$includeLocation = Input::get('includeLocation', false);
 	$includePicture = Input::get('includePicture', false);
+	$includeFavoriteQuote = Input::get('includeFavoriteQuote', false);
 	
 	return View::make('_master')
 		->with('numberOfParagraphs', $numberOfParagraphs)
 		->with('numberOfProfiles', $numberOfProfiles)
 		->with('includeBirthday', $includeBirthday)
 		->with('includeLocation', $includeLocation)
-		->with('includePicture', $includePicture);
+		->with('includePicture', $includePicture)
+		->with('includeFavoriteQuote', $includeFavoriteQuote);
 	
 });
 
@@ -37,18 +39,19 @@ Route::get('/', function() {
 Route::get('/text/{query}', function($query) {
 
 	// retrieve requested form data for dummy paragraphs and profiles and set to default values if not provided
-	$numberOfParagraphs = Input::get('numberOfParagraphs', 4);
+	$numberOfParagraphs = Input::get('numberOfParagraphs', 5);
 	$numberOfProfiles = Input::get('numberOfProfiles', 5);
 	$includeBirthday = Input::get('includeBirthday', false);
 	$includeLocation = Input::get('includeLocation', false);
 	$includePicture = Input::get('includePicture', false);
+	$includeFavoriteQuote = Input::get('includeFavoriteQuote', false);
 	
 	// strip numberOfParagraphs to integer and pull back to 1 or 7 if outside of range
 	$numberOfParagraphs = intval($numberOfParagraphs);
 	if ($numberOfParagraphs < 1) {
 		$numberOfParagraphs = 1;
-	} elseif ($numberOfParagraphs > 7) {
-		$numberOfParagraphs = 7;
+	} elseif ($numberOfParagraphs > 50) {
+		$numberOfParagraphs = 50;
 	}
 	
 	$booksToRead = array("AnneOfGreenGables",
@@ -76,7 +79,7 @@ Route::get('/text/{query}', function($query) {
 	for ($k = 0; $k < $numberOfParagraphs; $k++) {
 	    for ($i = 0; $i < $paragraphLength; $i++) {
 		$randomBook = rand(0, $numberOfBooksToRead - 1);
-		$randomSentence = rand(0, count($openedBooks[$randomBook]));
+		$randomSentence = rand(0, count($openedBooks[$randomBook]) - 1);
 		$generatedParagraphs[$k][$i] = $openedBooks[$randomBook][$randomSentence];
 	    }
 	}
@@ -88,7 +91,8 @@ Route::get('/text/{query}', function($query) {
 		->with('includeBirthday', $includeBirthday)
 		->with('includeLocation', $includeLocation)
 		->with('includePicture', $includePicture)
-		->with('generatedParagraphs', $generatedParagraphs);
+		->with('generatedParagraphs', $generatedParagraphs)
+		->with('includeFavoriteQuote', $includeFavoriteQuote);
 
 });
 
@@ -97,18 +101,19 @@ Route::get('/text/{query}', function($query) {
 Route::get('/profile/{query}', function($query) {
 	
 	// retrieve requested form data for dummy paragraphs and profiles and set to default values if not provided
-	$numberOfParagraphs = Input::get('numberOfParagraphs', 4);
+	$numberOfParagraphs = Input::get('numberOfParagraphs', 5);
 	$numberOfProfiles = Input::get('numberOfProfiles', 5);
 	$includeBirthday = Input::get('includeBirthday', false);
 	$includeLocation = Input::get('includeLocation', false);
 	$includePicture = Input::get('includePicture', false);
+	$includeFavoriteQuote = Input::get('includeFavoriteQuote', false);
 	
 	// strip numberOfProiles to integer and pull back to 1 or 30 if outside of range
 	$numberOfProfiles = intval($numberOfProfiles);
 	if ($numberOfProfiles < 1) {
 		$numberOfProfiles = 1;
-	} elseif ($numberOfProfiles > 30) {
-		$numberOfProfiles = 30;
+	} elseif ($numberOfProfiles > 50) {
+		$numberOfProfiles = 50;
 	}
 	
 	$faces = array(': )', ':-)', ': ]', ':-]', ': }', ':-}',
@@ -159,7 +164,8 @@ Route::get('/profile/{query}', function($query) {
 		->with('includeBirthday', $includeBirthday)
 		->with('includeLocation', $includeLocation)
 		->with('includePicture', $includePicture)
-		->with('generatedProfiles', $generatedProfiles);
+		->with('generatedProfiles', $generatedProfiles)
+		->with('includeFavoriteQuote', $includeFavoriteQuote);
 
 });
 

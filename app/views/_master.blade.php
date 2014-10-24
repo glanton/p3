@@ -39,17 +39,8 @@
     
         <!-- form for selecting number of dummy paragraphs -->  
         {{ Form::open(array('class' => 'formSection', 'id' => 'textForm', 'url' => 'text/form', 'method' => 'GET')) }}
-            {{ Form::label('numberOfParagraphs', 'How many paragraphs?') }}
-            <br>
-            {{ Form::select('numberOfParagraphs', array(
-                '1' => '1',
-                '2' => '2',
-                '3' => '3',
-                '4' => '4',
-                '5' => '5',
-                '6' => '6',
-                '7' => '7'
-            ), $numberOfParagraphs) }}
+            {{ Form::input('number', 'numberOfParagraphs', $numberOfParagraphs, ['max' => 50]) }}
+            {{ Form::label('numberOfParagraphs', 'Number of Paragraphs') }}
             <br>
             {{ Form::submit('Submit') }}
         {{ Form::close() }}
@@ -57,18 +48,20 @@
         
         <!-- form for selecting dummy profile options -->
         {{ Form::open(array('class' => 'formSection', 'id' => 'profileForm', 'url' => 'profile/form', 'method' => 'GET')) }}
-            {{ Form::label('numberOfProfiles', 'How many profiles?') }}
+            {{ Form::input('number', 'numberOfProfiles', $numberOfProfiles, ['max' => 50]) }}
+            {{ Form::label('numberOfProfiles', 'Number of Profiles') }}
             <br>
-            {{ Form::input('number', 'numberOfProfiles', $numberOfProfiles, ['max' => 30]) }}
+            {{ Form::checkbox('includeBirthday', 'true', $includeBirthday) }}
+            {{ Form::label('includeBirthday', 'Birthdate') }}
             <br>
-            {{ Form::label('includeBirthday', 'Include birthday?') }}
-            {{ Form::checkbox('includeBirthday', 'yes', $includeBirthday) }}
+            {{ Form::checkbox('includeLocation', 'true', $includeLocation) }}
+            {{ Form::label('includeLocation', 'City/Country') }}
             <br>
-            {{ Form::label('includeLocation', 'Include location?') }}
-            {{ Form::checkbox('includeLocation', 'yes', $includeLocation) }}
+            {{ Form::checkbox('includePicture', 'true', $includePicture) }}
+            {{ Form::label('includePicture', 'Profile Picture') }}
             <br>
-            {{ Form::label('includePicture', 'Include picture?', $includePicture) }}
-            {{ Form::checkbox('includePicture', 'yes') }}
+            {{ Form::checkbox('includeFavoriteQuote', 'true', $includeFavoriteQuote) }}
+            {{ Form::label('includeFavoriteQuote', 'Favorite Quote') }}
             <br>
             {{ Form::submit('Submit') }}
         {{ Form::close() }}
