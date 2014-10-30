@@ -25,7 +25,7 @@ Post-deadline submission note: See the commit for details but I just fixed some 
 There's a lot of credit to go around here, and I know I'll never be able to do justice to all of the help and techniques I found on StackOverflow. Some main sources, though:
 
 - Project Gutenberg, where I found complete text files for the ten books I used
-- The following authors and books: LM Montgomery - Anne of Green Gables, Brahm Stoker - Dracula, Mary Shelley - Frankenstein, Charles Dickens - Great Expectations, Joseph Conrad - Heart of Darkness, Charlotte Bronte - Jane Eyre, Herman Melville - Moby Dick, James Joyce - A Portrait of the Artist as a Young Man, Jane Austen - Pride and Prejudice, Nathaniel Hawthorne - The Scarlet Letter
+- The following authors and books: LM Montgomery - Anne of Green Gables, Bram Stoker - Dracula, Mary Shelley - Frankenstein, Charles Dickens - Great Expectations, Joseph Conrad - Heart of Darkness, Charlotte Bronte - Jane Eyre, Herman Melville - Moby Dick, James Joyce - A Portrait of the Artist as a Young Man, Jane Austen - Pride and Prejudice, Nathaniel Hawthorne - The Scarlet Letter
 - [thesitewizard](http://www.thesitewizard.com/php/create-image.shtml), where I learned about generating images in php
 - Ray Larabie, from [Typodermic Fonts](http://typodermicfonts.com/), who created and distributed for free the TTF file for Expressway, which turned out to be the perfect font for created the smileys on my generated profile pictures
 - [CSS Sticky Footer](http://www.cssstickyfooter.com/), which didn't really make a difference on my latop but should look nice on larger screens
